@@ -1,6 +1,6 @@
 import '../stylesheets/Home.css';
 
-export function Home() {
+function Home() {
   return (
     <div className="home-container">
       <div className="table-container">
@@ -34,3 +34,5 @@ export function Home() {
     </div>
   )
 }
+
+export default Home;
