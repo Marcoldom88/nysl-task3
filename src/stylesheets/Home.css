@@ -1,0 +1,25 @@
+.table-container{
+  border-radius: 15px;
+  background-color: #F8F9FA;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 20px;
+  padding: 5px;
+  box-shadow: 0 3px 13px 1px rgb(0, 0, 0, 0.5);
+}
+.contact-container{
+  border-radius: 15px;
+  background-color: #F8F9FA;
+  max-width: 500px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 20px;
+  padding: 10px;
+  box-shadow: 0 3px 13px 1px rgb(0, 0, 0, 0.5);
+}
