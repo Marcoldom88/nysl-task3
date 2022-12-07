@@ -21,7 +21,7 @@ function Home() {
             </tr>
             <tr>
               <td>September 1</td>
-              <td>First Game of the Season (Check Game Schedule for detaisl)</td>
+              <td>First Game of the Season (Check Game Schedule for details)</td>
             </tr>
           </tbody>
         </table>

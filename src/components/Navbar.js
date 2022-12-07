@@ -5,7 +5,7 @@ import '../stylesheets/Navbar.css'
 function Navbar() {
   return(
     <div>
-      <nav className="navbar navbar-dark bg-dark fixed-top">
+      <nav className="navbar  navbar-dark bg-dark fixed-top">
         <div className="container-fluid">
           <h1 className="brand" >NYSL App</h1>
           <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
@@ -19,7 +19,7 @@ function Navbar() {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <Link to="./" className="nav-link active" aria-current="page">Home</Link>
+                  <Link to="./" className="nav-link" aria-current="page">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link to="./Schedule" className="nav-link">Game Schedule</Link>

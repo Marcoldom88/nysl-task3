@@ -13,6 +13,7 @@ import { RouterProvider, createBrowserRouter, } from 'react-router-dom';
 import Home  from './components/Home';
 import { Schedule } from './components/Schedule';
 import ErrorPage from "./error-page";
+import { Games } from './components/Games';
 
 const App = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const App = createBrowserRouter([
         path: "Schedule",
         element: <Schedule />,
       },
+      {
+        path: "Games",
+        element: <Games />
+      }
     ],
   }
 ])
