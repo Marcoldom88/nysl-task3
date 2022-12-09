@@ -1,7 +1,7 @@
 .game-container {
   border-radius: 15px;
   background-color: #F8F9FA;
-  width: 450px;
+  max-width: 450px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -10,7 +10,7 @@
   margin: 20px;
   padding: 5px;
   box-shadow: 0 3px 13px 1px rgb(0, 0, 0, 0.5);
-
+  padding: 15px;
 }
 iframe {
   border: solid 1px;
