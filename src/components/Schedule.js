@@ -17,6 +17,15 @@ export const Schedule = () => {
     fetchGames();
   }, []);
 
+
+  if (!games) return <h1>Loading schedule...</h1>;
+
+  return (
+    <CreateGamesTable matches={games.matches} />   
+  )
+  
+}; 
+
   const CreateGamesTable = ({ matches }) => (
     <div className="schedule-container">
       <table className="schedule-table table">
@@ -39,13 +48,6 @@ export const Schedule = () => {
       </table>
     </div>
   );
-  if (!games) return <h1>Loading schedule...</h1>;
-
-  return (
-    <CreateGamesTable matches={games.matches} />   
-  )
-  
-}; 
 
 
 

@@ -1,11 +1,10 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Match = ({ match }) => (
   <tr>
     <td>{match.date}</td>
     <td><Link to={{
-        pathname: "/games",
-        search: `?id=${match.id}`
+        pathname: `/games/${match.id}`
       }} className="nav-link">
         {match.teams}
     </Link></td>
@@ -13,8 +12,8 @@ export const Match = ({ match }) => (
   </tr>
 );
 
-export const Component = () => {
+/*export const Component = () => {
   const [searchParams] = useSearchParams();
   const id = searchParams.get("id");
   return id;
-}
+}*/
