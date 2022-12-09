@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import '../stylesheets/GamesDetails.css'
 
 
-export const CreateGamesDetails = ({ matches, locations }) => {
+export const CreateGamesDetails = () => {
   const [games, setGames] = useState();
   const params = useParams();
 
@@ -17,7 +17,7 @@ export const CreateGamesDetails = ({ matches, locations }) => {
     fetchGames();
   }, []);
  
-  if (!games) return <h1>Loading schedule...</h1>;
+  if (!games) return <h1>Loading details...</h1>;
   
   const filteredMatch = Object.values(games.matches).filter((match) => match.id === params.id);
   const date = Array.from(filteredMatch).map((x) => x = x.date);
@@ -25,6 +25,7 @@ export const CreateGamesDetails = ({ matches, locations }) => {
   const time = Array.from(filteredMatch).map((x) => x = x.time);
   const locationID = Array.from(filteredMatch).map((x) => x = x.game_location);
   const sites = Object.values(games.locations)
+  // eslint-disable-next-line eqeqeq
   const filteredLocation = Array.from(sites).filter((x) => x.id == locationID);
   const location = Array.from(filteredLocation).map((x) => x = x.location_name);
   const address = Array.from(filteredLocation).map((x) => x = x.address);
@@ -42,7 +43,7 @@ export const CreateGamesDetails = ({ matches, locations }) => {
           <p><strong>Location:</strong> {location}</p>
           <p><strong>Address:</strong> {address}</p>
           <p><strong>Map:</strong></p>
-          <iframe title={locationID} src={googleUrl} width="400" height="300" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+          <iframe title={locationID} src={googleUrl} width="350" height="250" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
   

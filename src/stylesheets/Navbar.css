@@ -11,3 +11,10 @@
   color: #ECEDEE;
   
 }
+.offcanvas-end{
+  max-width: 250px !important;
+}
+.logo{
+  text-align: center;
+  margin: 35px 25px 25px 65px;
+}

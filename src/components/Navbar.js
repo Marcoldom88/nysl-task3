@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import '../stylesheets/Navbar.css'
+import '../stylesheets/Navbar.css';
+import { signInWithGoogle, signOut, useUserState } from '../utilities/firebase';
 
 function Navbar() {
   return(
@@ -15,8 +16,10 @@ function Navbar() {
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
               <button type="button" className="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              
             </div>
             <div className="offcanvas-body">
+              <Authentication />
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
                   <Link to="./" className="nav-link" aria-current="page">Home</Link>
@@ -25,6 +28,7 @@ function Navbar() {
                   <Link to="./Schedule" className="nav-link">Game Schedule</Link>
                 </li>
               </ul>
+              <img className="logo" src="images/nysl_logo.png" alt="NYSL Logo"></img>
             </div>
           </div>
         </div>
@@ -37,5 +41,29 @@ function Navbar() {
     </div>
   )
 }
+
+const SignInButton = () => (
+  <button className="btn btn-secondary btn-sm"
+      onClick={() => signInWithGoogle()}>
+    Sign In
+  </button>
+);
+
+const SignOutButton = () => (
+  <button className="btn btn-secondary btn-sm"
+      onClick={() => signOut()}>
+    Sign Out
+  </button>
+);
+
+const Authentication = () => {
+  const [user] = useUserState();
+  return (
+    <div className="btn-toolbar justify-content-between">
+      { user ? <SignOutButton /> : <SignInButton /> }
+    </div>
+  );
+};
+
 
 export default Navbar
