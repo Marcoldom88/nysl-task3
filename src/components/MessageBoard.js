@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import SimpleDateTime from 'react-simple-timestamp-to-date';
-import '../stylesheets/MessageBoard.css'
+import '../stylesheets/MessageBoard.css';
+import { useList } from 'react-firebase-hooks/database';
 
 export const MessageBoard  = () => {
 const [messages, setMessages] = useState();
@@ -27,12 +28,11 @@ const CreateMessageBoard = ({ chats }) => (
     <main role="main" className="container bootdey.com message-board-container">
       <div className="">
         <div className="">
-          <h5 className="">Logged-in as @Username</h5>
+          <h3 className="">Message Board</h3>
         </div>
       </div>
       <div className="my-3 p-3 rounded">
-        <h6 className="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
-        { Object.values(chats).map(message => <Message key={message.id} message={message} />) }
+         { Object.values(chats).map(message => <Message key={message.id} message={message} />) }
       </div>
     </main>
 );

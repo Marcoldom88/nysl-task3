@@ -1,4 +1,4 @@
-{
+{"messages": {
   "mes00001":{
     "id": "mes00001",
     "author": "abc@example.com",
@@ -47,4 +47,5 @@
     "text": "test 8",
     "timestamp": 1670848459
   }
+}
 }

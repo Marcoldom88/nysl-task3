@@ -27,9 +27,7 @@ function Navbar() {
                 <li className="nav-item">
                   <Link to="./Schedule" className="nav-link">Game Schedule</Link>
                 </li>
-                <li className="nav-item">
-                  <Link to="./MessageBoard" className="nav-link">Message Board</Link>
-                </li>
+                <VisibleLinksSignedIn />
               </ul>
               <img className="logo" src="images/nysl_logo.png" alt="NYSL Logo"></img>
             </div>
@@ -53,10 +51,12 @@ const SignInButton = () => (
 );
 
 const SignOutButton = () => (
-  <button className="btn btn-secondary btn-sm"
+  <div>
+    <button className="btn btn-secondary btn-sm"
       onClick={() => signOut()}>
-    Sign Out
-  </button>
+      Sign Out
+    </button>
+  </div>
 );
 
 const Authentication = () => {
@@ -64,6 +64,19 @@ const Authentication = () => {
   return (
     <div className="btn-toolbar justify-content-between">
       { user ? <SignOutButton /> : <SignInButton /> }
+    </div>
+  );
+};
+
+const VisibleLinksSignedIn = () => {
+  const [user] = useUserState();
+  return (
+    <div>
+      {user ?
+        <li className="nav-item">
+          <Link to="./MessageBoard" className="nav-link">Message Board</Link>
+        </li> :
+        <br/>}
     </div>
   );
 };
