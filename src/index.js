@@ -13,7 +13,8 @@ import { RouterProvider, createBrowserRouter, } from 'react-router-dom';
 import Home  from './components/Home';
 import { Schedule } from './components/Schedule';
 import ErrorPage from "./error-page";
-import {  CreateGamesDetails } from './components/GamesDetails';
+import { CreateGamesDetails } from './components/GamesDetails';
+import { MessageBoard } from './components/MessageBoard';
 
 const App = createBrowserRouter([
   {
@@ -29,11 +30,14 @@ const App = createBrowserRouter([
         path: "Schedule",
         element: <Schedule />,
       },
-     
       {
         path: "games/:id",
         element: <CreateGamesDetails/>
-      }
+      },
+      {
+        path: "MessageBoard",
+        element: <MessageBoard />,
+      },
     ],
  
     

@@ -27,6 +27,9 @@ function Navbar() {
                 <li className="nav-item">
                   <Link to="./Schedule" className="nav-link">Game Schedule</Link>
                 </li>
+                <li className="nav-item">
+                  <Link to="./MessageBoard" className="nav-link">Message Board</Link>
+                </li>
               </ul>
               <img className="logo" src="images/nysl_logo.png" alt="NYSL Logo"></img>
             </div>
