@@ -1,6 +1,7 @@
 import '../stylesheets/Home.css';
 
 function Home() {
+
   return (
     <div className="home-container">
       <div className="table-container">
