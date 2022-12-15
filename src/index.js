@@ -1,22 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Navbar from './components/Navbar';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-// React Router
-import { RouterProvider, createBrowserRouter, } from 'react-router-dom';
+/*import Navbar from './components/Navbar';
 import Home  from './components/Home';
 import { Schedule } from './components/Schedule';
 import ErrorPage from "./error-page";
 import { CreateGamesDetails } from './components/GamesDetails';
-import { MessageBoard } from './components/MessageBoard';
+import { MessageBoard } from './components/MessageBoard';*/
+import App from './App'
 
-const App = createBrowserRouter([
+/*const App = createBrowserRouter([
   {
     path: "/",
     element: <Navbar />,
@@ -42,12 +41,12 @@ const App = createBrowserRouter([
  
     
   }
-])
+])*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-    <RouterProvider router={App} />
+  <React.StrictMode>
+    <App />
   </React.StrictMode>
 );
 

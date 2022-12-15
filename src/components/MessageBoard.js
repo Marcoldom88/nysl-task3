@@ -28,7 +28,7 @@ export const MessageBoard = () => {
   const [messages, loading, error] = useData('/messages'); 
   
   if (error) return <h1>{error}</h1>;
-  if (loading) return <h1>Loading the schedule...</h1>
+  if (loading) return <h1>Loading the message board...</h1>
   
   return (
    <CreateMessageBoard chats={messages} />
