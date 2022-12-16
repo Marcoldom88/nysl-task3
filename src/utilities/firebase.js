@@ -23,7 +23,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const firebase = initializeApp(firebaseConfig);
-const database = getDatabase(firebase);
+export const database = getDatabase(firebase);
 
 export const useData = (path) => {
   const [data, setData] = useState();
@@ -53,7 +53,6 @@ export const useData = (path) => {
 /*export const useData = (path) => {
     const dbRef = ref_database(database, path);
   const [snapshots, loading, error] = useList(dbRef);
-  console.log( dbRef,'hola :)')
     return [snapshots, loading, error];
 };*/
       

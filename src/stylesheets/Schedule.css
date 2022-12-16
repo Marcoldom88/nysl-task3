@@ -1,7 +1,7 @@
 .schedule-container {
   border-radius: 15px;
   background-color: #F8F9FA;
-  width: 450px;
+  min-width: 375px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

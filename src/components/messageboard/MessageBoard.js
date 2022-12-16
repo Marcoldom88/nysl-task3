@@ -1,10 +1,10 @@
 import React from 'react';
-import '../stylesheets/MessageBoard.css';
-import { useData } from '../utilities/firebase';
+import '../../stylesheets/MessageBoard.css';
+import { useData } from '../../utilities/firebase';
 import { CreateMessageBoard } from './CreateMessageBoard';
 
 
-export const MessageBoard = () => {
+export const MessageBoard = ({user}) => {
 //code for using FETCH from local JSON
 /*const [messages, setMessages] = useState();
 
@@ -31,7 +31,7 @@ export const MessageBoard = () => {
   if (loading) return <h1>Loading the message board...</h1>
   
   return (
-   <CreateMessageBoard chats={messages} />
+   <CreateMessageBoard chats={messages} user={user} />
   );
 
 }

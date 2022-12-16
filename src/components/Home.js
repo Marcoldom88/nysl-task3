@@ -1,7 +1,9 @@
 import '../stylesheets/Home.css';
 
-function Home() {
 
+function Home() {
+  
+  
   return (
     <div className="home-container">
       <div className="table-container">

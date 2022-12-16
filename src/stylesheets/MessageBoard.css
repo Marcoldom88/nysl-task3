@@ -2,6 +2,7 @@
   border-radius: 15px;
   background-color: #F8F9FA;
   max-width: 600px;
+  min-width: 360px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

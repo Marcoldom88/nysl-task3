@@ -1,6 +1,8 @@
 import SimpleDateTime from 'react-simple-timestamp-to-date';
+import Submit from './Submit';
 
-export const CreateMessageBoard = ({ chats }) => {
+export const CreateMessageBoard = ({ chats, user }) => {
+  
   return (
     <main role="main" className="container bootdey.com message-board-container">
       <div className="">
@@ -11,10 +13,7 @@ export const CreateMessageBoard = ({ chats }) => {
       <div className="my-3 p-3 rounded">
         {Object.values(chats).map(message => <Message key={message.id} message={message} />)}
       </div>
-      <div className='messageInput'>
-        <input type='text' className='chatInput' placeholder='Leave here your message :)'></input>
-        <input type='submit' className='submit' value='Send'></input>
-      </div>
+      <Submit user={user} />
     </main>
   )
 };
@@ -30,3 +29,7 @@ const Message = ({ message }) => (
     </p>
   </div>
 );
+
+
+
+
