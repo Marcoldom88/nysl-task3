@@ -2,7 +2,7 @@
   border-radius: 15px;
   background-color: #F8F9FA;
   max-width: 600px;
-  min-width: 360px;
+  min-width: 350px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -26,4 +26,9 @@
 }
 .submit {
   flex-grow: 1;
+}
+
+body.keyboard {
+  height: calc(100% + 500px);
+  /* add padding for keyboard */
 }

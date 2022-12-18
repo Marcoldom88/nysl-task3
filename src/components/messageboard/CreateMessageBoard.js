@@ -1,8 +1,7 @@
-import SimpleDateTime from 'react-simple-timestamp-to-date';
+
 import Submit from './Submit';
 
 export const CreateMessageBoard = ({ chats, user }) => {
-  
   return (
     <main role="main" className="container bootdey.com message-board-container">
       <div className="">
@@ -19,17 +18,20 @@ export const CreateMessageBoard = ({ chats, user }) => {
 };
 
 const Message = ({ message }) => (
-  <div className="media text-muted pt-3">
+  <div className="media pt-3">
     <p className="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-      <strong className="d-block text-gray-dark">{message.author}</strong>
-      <strong className="d-block text-gray-dark">
-        <SimpleDateTime dateSeparator="/" timeSeparator=":" dateFormat="DMY" timeFormat="HMS">{message.timestamp}</SimpleDateTime>
+      <strong className="d-block">{message.author}</strong>
+      <strong className="d-block">
+        <ConvertTimestamp message={message} />
       </strong>
       {message.text}
     </p>
   </div>
 );
 
-
+const ConvertTimestamp = ({ message }) => (
+  new Intl.DateTimeFormat('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' })
+    .format(message.timestamp)
+)
 
 
