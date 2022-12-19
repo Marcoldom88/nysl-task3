@@ -28,7 +28,10 @@ export const MessageBoard = ({user}) => {
   const [messages, loading, error] = useData('/messages'); 
   
   if (error) return <h1>{error}</h1>;
-  if (loading) return <h1>Loading the message board...</h1>
+  if (loading) return
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
   
   return (
    <CreateMessageBoard chats={messages} user={user} />

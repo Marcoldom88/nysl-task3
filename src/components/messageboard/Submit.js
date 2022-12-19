@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import { database } from '../../utilities/firebase';
 import { useState } from 'react';
 import { push, ref } from 'firebase/database';
@@ -31,7 +32,7 @@ const Submit = ({user}) => {
         <input type='text' className='chatInput' value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder='Leave here your message :)' />
-        <input type='submit' className='submit' value='Send' />
+        <input type='submit' className='submit btn btn-success btn-sm' value='Send' />
       </form>
     )
   

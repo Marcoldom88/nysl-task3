@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Home  from './components/Home';
-import { Schedule } from './components/Schedule';
+import { Schedule } from './components/Schedule/Schedule';
 import { CreateGamesDetails } from './components/GamesDetails';
 import { MessageBoard } from './components/messageboard/MessageBoard';
 import Protected from './utilities/Protected';
@@ -19,7 +19,7 @@ function App() {
             <Route path='/schedule' element={<Schedule />} />
             <Route path='/games/:id' element={<CreateGamesDetails />} />
             <Route element={<Protected user={user} />}>
-            <Route path='/messageboard' element={<MessageBoard user={user} />} />
+              <Route path='/messageboard' element={<MessageBoard user={user} />} />
             </Route>
           </Routes>
         </div>

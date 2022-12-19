@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import '../stylesheets/Navbar.css';
-import { signInWithGoogle, signOut, useUserState } from '../utilities/firebase';
+import { Authentication, VisibleLinksSignedIn} from '../utilities/functions'
+
 
 function Navbar() {
   return(
@@ -43,43 +44,7 @@ function Navbar() {
   )
 }
 
-const SignInButton = () => (
-  <button className="btn btn-secondary btn-sm"
-      onClick={() => signInWithGoogle()}>
-    Sign In
-  </button>
-);
 
-const SignOutButton = () => (
-  <div>
-    <button className="btn btn-secondary btn-sm"
-      onClick={() => signOut()}>
-      Sign Out
-    </button>
-  </div>
-);
-
-const Authentication = () => {
-  const [user] = useUserState();
-  return (
-    <div className="btn-toolbar justify-content-between">
-      { user ? <SignOutButton /> : <SignInButton /> }
-    </div>
-  );
-};
-
-const VisibleLinksSignedIn = () => {
-  const [user] = useUserState();
-  return (
-    <div>
-      {user ?
-        <li className="nav-item">
-          <Link to="./MessageBoard" className="nav-link">Message Board</Link>
-        </li> :
-        <br/>}
-    </div>
-  );
-};
 
 
 export default Navbar

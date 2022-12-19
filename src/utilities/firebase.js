@@ -1,9 +1,10 @@
 // Import the functions you need from the SDKs you need
 import { useState, useEffect } from 'react';
 import { initializeApp } from 'firebase/app';
-import  'firebase/database';
+import 'firebase/database';
 import { getAuth, GoogleAuthProvider, onIdTokenChanged, signInWithPopup, signOut } from 'firebase/auth';
-import { getDatabase, onValue, ref as ref_database } from 'firebase/database';
+import { getDatabase, onValue, ref } from 'firebase/database';
+
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -25,13 +26,14 @@ const firebaseConfig = {
 export const firebase = initializeApp(firebaseConfig);
 export const database = getDatabase(firebase);
 
+
 export const useData = (path) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
   
   useEffect(() => {
-    const dbRef = ref_database(database, path);
+    const dbRef = ref(database, path);
     const devMode = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
     if (devMode) { console.log(`loading ${path}`); }
     return onValue(dbRef, (snapshot) => {
@@ -51,7 +53,7 @@ export const useData = (path) => {
 };
 //simplier code Mirko used to debug why database wasn't working. 
 /*export const useData = (path) => {
-    const dbRef = ref_database(database, path);
+    const dbRef = ref(database, path);
   const [snapshots, loading, error] = useList(dbRef);
     return [snapshots, loading, error];
 };*/

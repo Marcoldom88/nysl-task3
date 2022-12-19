@@ -1,8 +1,7 @@
 .message-board-container {
   border-radius: 15px;
   background-color: #F8F9FA;
-  max-width: 600px;
-  min-width: 350px;
+  max-width: 650px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -31,4 +30,31 @@
 body.keyboard {
   height: calc(100% + 500px);
   /* add padding for keyboard */
+}
+
+.message-header {
+  font-size: small;
+  font-weight: bold;
+  color: #033949;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom:1px solid rgba(3, 57, 73, 0.5);
+  height: 30px;
+}
+
+.message-body{
+  padding-top: 10px;
+}
+.message-card{
+  border: 1px solid rgba(3, 57, 73, 0.1);
+  border-radius: 15px;
+  background-color: #fff;
+  font-size: small;
+  padding: 0 15px 0 15px;
+  box-shadow: 0 3px 13px 1px rgb(0, 0, 0, 0.1)
+}
+
+.margin{
+  margin: 20px 0 10px 0;
 }

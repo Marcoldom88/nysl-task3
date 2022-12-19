@@ -17,7 +17,10 @@ export const CreateGamesDetails = () => {
     fetchGames();
   }, []);
  
-  if (!games) return <h1>Loading details...</h1>;
+  if (!games) return
+      <div class="spinner-border text-success" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>;
   
   const filteredMatch = Object.values(games.matches).filter((match) => match.id === params.id);
   const date = Array.from(filteredMatch).map((x) => x = x.date);

@@ -12,8 +12,3 @@ export const Match = ({ match }) => (
   </tr>
 );
 
-/*export const Component = () => {
-  const [searchParams] = useSearchParams();
-  const id = searchParams.get("id");
-  return id;
-}*/
