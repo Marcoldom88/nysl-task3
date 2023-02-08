@@ -15,33 +15,6 @@ import { CreateGamesDetails } from './components/GamesDetails';
 import { MessageBoard } from './components/MessageBoard';*/
 import App from './App'
 
-/*const App = createBrowserRouter([
-  {
-    path: "/",
-    element: <Navbar />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: "Schedule",
-        element: <Schedule />,
-      },
-      {
-        path: "games/:id",
-        element: <CreateGamesDetails/>
-      },
-      {
-        path: "MessageBoard",
-        element: <MessageBoard />,
-      },
-    ],
- 
-    
-  }
-])*/
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
